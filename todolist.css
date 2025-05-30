@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:  Times, 'Times New Roman', serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('todolist.jpeg');
+    background-repeat: no-repeat; /* Prevents repeating */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ensures full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main container */
+.container {
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Todo App Box */
+.todo-app {
+    background: white;
+    width: 500px;
+    padding: 25px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Input & Button Row */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    font-size: 16px;
+}
+
+button {
+    font-weight: bold;
+    background: #bd809f;
+    color: white;
+    content: bold;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #d0acbe;
+}
+
+/* Task List */
+ul {
+    list-style: none;
+    padding: 0;
+    position: relative; /* Ensures relative positioning for child elements */
+}
+
+ul li {
+    background: #fff;
+    padding: 12px 12px 12px 40px; /* Extra left padding for checkbox */
+    margin: 8px 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    position: relative; /* Needed for absolute positioning of ::before */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+    font-size: 16px;
+    font-weight: bold; /* Make text bold */
+    cursor: pointer;
+}
+
+/* Custom Checkbox Before List Items */
+ul li::before {
+    content: '';
+    position: absolute;
+    left: 10px; /* Adjusts position */
+    top: 50%;
+    transform: translateY(-50%);
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url('unchecked.jpeg');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+ul li:hover {
+    background: #f0f0f0;
+    transform: scale(1.02);
+}
+
+ul li.checked{
+    color:#333;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url('checked.jpeg');
+}
+ul li span {
+    position: absolute;
+    right: 10px; /* Align to the right */
+    top: 50%;
+    transform: translateY(-50%); /* Centers vertically */
+    height: 30px;
+    width: 30px;
+    font-size: 22px;
+    line-height: 30px; /* Center text inside */
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer; /* Makes it clickable */
+    transition: 0.3s ease;
+}
+
+ul li span:hover {
+    background-color: #bd809f;
+    color: white; /* Optional: Change text color on hover */
+}
